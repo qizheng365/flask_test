@@ -1,3 +1,5 @@
-{% for index,value in dict_v.items(): %}
-	<h1>hello {{index}}:{{value}}</h1>
+{% import "p_comment.html" as pc %}
+
+{% for i in range(3) %}
+	<h1>hello {{pc.print_comment(dict_v["user"])}}</h1>
 {% endfor %}

@@ -13,8 +13,12 @@ def main():
 
 @app.route("/user/<username>")
 def hello(username):
-	mydict = {"user":username,"a":"b"}
-	return render_template("user.html", dict_v=mydict),400
+	mydict = {"user":username}
+	return render_template("user.html", dict_v=mydict)
+
+@app.route("/user/self")
+def myhtml():
+	return render_template("myhtml.html")
 
 if __name__ == "__main__":
 	manager.run()
