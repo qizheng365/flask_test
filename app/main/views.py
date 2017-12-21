@@ -3,9 +3,6 @@ from datetime import datetime
 from flask_login import login_required
 
 from . import main
-from ..forms import NameForm
-from .. import db
-from ..models import User
 
 @main.route("/", methods=['GET','POST'])
 def index():
@@ -27,11 +24,6 @@ def index():
 #		form.name.data=''
 #		return redirect(url_for(".index"))
 #	return render_template("Index.html", name=session.get('name'), form=form, known=session.get('known'), current_time=datetime.utcnow())
-
-
-@main.route("/user/<username>")
-def hello(username):
-	return render_template("user.html", name=username)
 
 @main.route("/secret")
 @login_required
